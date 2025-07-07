@@ -1,0 +1,82 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+.price-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.price-list th, .price-list td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+
+/* Form container */
+form {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: auto;
+}
+
+/* Label styling */
+label {
+    display: inline-block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* Input and select styling */
+input[type="text"],
+input[type="tel"],
+select {
+    width: calc(100% - 20px);
+    padding: 8px 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Grouping food items and quantity */
+.food-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+    .food-group {
+        flex-direction: column;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    select {
+        width: 100%;
+    }
+}
+button {
+  background-color: #007bff;    
+  color: white;                  
+  padding: 10px 20px;            
+  border: none;                  
+  border-radius: 5px;            
+  font-size: 16px;              
+  cursor: pointer;              
+  transition: background-color 0.3s ease; 
+}
+
+button:hover {
+  background-color: #0056b3;     
+}

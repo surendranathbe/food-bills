@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="product.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product cost</title>
+</head>
+
+<body>
+
+    <div class="price-list">
+        <h2>Price List</h2>
+        <table>
+            <tr>
+                <th>Food Item</th>
+                <th>Price (Rs.)</th>
+            </tr>
+            <tr>
+                <td>Chicken Pizza</td>
+                <td>700.00</td>
+            </tr>
+            <tr>
+                <td>Vegetable Pizza</td>
+                <td>500.00</td>
+            </tr>
+            <tr>
+                <td>Chicken puff</td>
+                <td>300.00</td>
+            </tr>
+            <tr>
+                <td>salad</td>
+                <td>200.00</td>
+            </tr>
+            <tr>
+                <td>Water Bottle</td>
+                <td>70.00</td>
+            </tr>
+            <tr>
+                <td>dosa</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>onion dosa</td>
+                <td>55</td>
+            </tr>
+            <tr>
+                <td>idil</td>
+                <td>45</td>
+            </tr>
+            <tr>
+                <td>chapathi</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>porota</td>
+                <td>60</td>
+            </tr>
+
+        </table>
+    </div>
+
+
+    <form>
+    <label for="name">User Name:</label>
+    <input type="text" id="name" name="name" required placeholder="Enter your name"><br><br>
+
+    <label for="number">Mobile Number:</label>
+    <input type="tel" id="number" name="number" required placeholder="Enter your mobile number"><br><br>
+
+    <label>Food Items and Quantity:</label><br><br>
+
+    <label for="item1">Item 1:</label>
+    <select id="item1">
+        <option value="chicken pizza">Chicken Pizza</option>
+        <option value="vegetable pizza">Vegetable Pizza</option>
+        <option value="burger">Burger</option>
+        <option value="Chicken puff">Chicken Kottu</option>
+        <option value="salad">Salad</option>
+    </select>
+
+    <select id="qty1">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+    </select>
+
+    <br><br>
+
+    <label for="item2">Item 2:</label>
+    <select id="item2">
+        <option value="dosa">Dosa</option>
+        <option value="idil">Idil</option>
+        <option value="onion dosa">Onion Dosa</option>
+        <option value="chapathi">Chapathi</option>
+        <option value="porota">Porota</option>
+    </select>
+
+    <select id="qty2">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+    </select>
+
+    <br><br>
+    <button type="button" onclick="totalamount()">Calculate Total</button>
+</form>
+
+<div class="total">
+    <h2>Total Cost: <span id="totalCost">0</span></h2>
+</div>
+
+<script>
+    function totalamount() {
+        let item1 =document.getElementById("item1").value;
+        let qty1= document.getElementById("qty1").value;
+        let item2=document.getElementById("item2").value;
+        let qty2 = document.getElementById("qty2").value;
+
+        let totalost = 0; 
+
+        let costprice=
+        {
+            "chicken pizza":700,
+            "vegetable pizza":500,
+            "chicken puff":300,
+            "salad":200,
+            "dosa":30,
+            "onion dosa":55,
+            "idil":45,
+            "chapathi":50,
+            "porota":60,
+        };
+         
+        let totalCost=0;
+
+        if(costprice[item1])
+        {
+            totalCost += costprice[item1] * qty1;
+        }
+        if(costprice[item2])
+        {
+            totalCost += costprice[item2] * qty2;
+        }
+
+        document.getElementById("totalCost").innerHTML=totalCost.toFixed(3);
+        }
+</script>
+</body>
+
+</html>
